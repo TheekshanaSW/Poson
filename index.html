@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poson Deco by Department of Mechanical Engineering 21st batch</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the video covers the entire background */
+            z-index: -1; /* Place video behind other content */
+        }
+
+        .button-container {
+            text-align: center;
+            z-index: 1; /* Ensure button is above the video */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            display: inline-block;
+            margin: 4px 2px;
+            transition: transform 0.3s ease-out; /* Add animation transition */
+        }
+
+        .btn img {
+            width: 80px; /* Adjust the size of the rotating image */
+            height: auto;
+            border-radius: 50%;
+            animation: rotate 20s linear infinite; /* CSS animation */
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .text-btn {
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            border: 2px solid white; /* White border */
+            color: white; /* Text color */
+            padding: 5px 10px; /* Smaller padding inside the button */
+            font-size: 12px; /* Smaller text size */
+            margin-top: 10px; /* Space between image and text button */
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer;
+            transition: opacity 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .text-btn:hover {
+            opacity: 0.8;
+            background-color: rgba(255, 255, 255, 0.3); /* Change background color on hover */
+        }
+
+        .button-position {
+            position: absolute;
+            bottom: 160px; /* Lifted by 10px */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; /* Ensure button is above the video */
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Media query for tablets */
+        @media (max-width: 768px) {
+            .btn img {
+                width: 60px;
+            }
+
+            .button-position {
+                bottom: 250px; /* Adjusted for better visibility on tablets */
+            }
+
+            .text-btn {
+                font-size: 10px; /* Adjust text size */
+                padding: 4px 8px; /* Adjust padding */
+            }
+        }
+
+        /* Media query for phones */
+        @media (max-width: 480px) {
+            .btn img {
+                width: 60px;
+            }
+
+            .button-position {
+                bottom: 300px; /* Adjusted for better visibility on phones */
+            }
+
+            .text-btn {
+                font-size: 10px; /* Adjust text size */
+                padding: 4px 8px; /* Adjust padding */
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="vid2.mp4" type="video/mp4"> 
+        Your browser does not support the video tag.
+    </video>
+    <div class="button-position">
+        <div class="button-container">
+            <button class="btn" onclick="redirectToVideo()">
+                
+                <img src="img3.png" alt="ධර්ම චක්‍රය">
+            </button>
+            <center>
+            <button class="text-btn" onclick="redirectToVideo()">මෙතනින් පිවිසෙන්න</button></center>
+        </div>
+    </div>
+
+    <script>
+        function redirectToVideo() {
+            window.location.href = 'video.html'; 
+        }
+    </script>
+</body>
+</html>
